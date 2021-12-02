@@ -22,7 +22,6 @@ def partB():
     aim = 0
 
     for line in lines:
-        dir = line.split(' ')
         cmd, val = line.split()
         val = int(val)
         if cmd == 'forward':
