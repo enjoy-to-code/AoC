@@ -6,13 +6,14 @@ def partA():
     depth = 0
 
     for line in lines:
-        dir = line.split(' ')
-        if dir[0] == 'forward':
-            hp = hp + int(dir[1])
-        elif dir[0] == 'down':
-            depth = depth - int(dir[1])
-        elif dir[0] == 'up':
-            depth = depth + int(dir[1])
+        cmd, val = line.split()
+        val = int(val)
+        if cmd == 'forward':
+            hp = hp + val
+        elif cmd == 'down':
+            depth = depth - val
+        elif cmd == 'up':
+            depth = depth + val
     print(hp*abs(depth))   
 
 def partB():
@@ -22,13 +23,15 @@ def partB():
 
     for line in lines:
         dir = line.split(' ')
-        if dir[0] == 'forward':
-            hp = hp + int(dir[1])
-            depth = depth + aim * int(dir[1])
-        elif dir[0] == 'down':
-            aim = aim - int(dir[1])
-        elif dir[0] == 'up':
-            aim = aim + int(dir[1])
+        cmd, val = line.split()
+        val = int(val)
+        if cmd == 'forward':
+            hp = hp + val
+            depth = depth + aim * val
+        elif cmd == 'down':
+            aim = aim - val
+        elif cmd == 'up':
+            aim = aim + val
     print(hp*abs(depth))   
 
 partA() # 2019945
